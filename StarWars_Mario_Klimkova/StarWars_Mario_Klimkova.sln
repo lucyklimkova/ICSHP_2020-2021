@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars_Mario_Klimkova", "StarWars_Mario_Klimkova\StarWars_Mario_Klimkova.csproj", "{8BD374DD-7F04-4373-8ECB-8EB58762D013}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BD374DD-7F04-4373-8ECB-8EB58762D013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD374DD-7F04-4373-8ECB-8EB58762D013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD374DD-7F04-4373-8ECB-8EB58762D013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD374DD-7F04-4373-8ECB-8EB58762D013}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56D88E3E-1C96-462C-804D-CDB41FA065C7}
+	EndGlobalSection
+EndGlobal
