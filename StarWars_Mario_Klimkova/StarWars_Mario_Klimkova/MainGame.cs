@@ -273,14 +273,14 @@ namespace StarWars_Mario_Klimkova
             {
                 case Keys.Right:
                     right = false;
-                    if (player.Image == Properties.Resources.player || player.Image == Properties.Resources.player_left)
+                    if (OptionPage.skin == null)
                     {
                         player.Image = Properties.Resources.player;
                     }
                     break;
                 case Keys.Left:
                     left = false;
-                    if (player.Image == Properties.Resources.player || player.Image == Properties.Resources.player_left)
+                    if (OptionPage.skin == null)
                     {
                         player.Image = Properties.Resources.player_left;
                     }
