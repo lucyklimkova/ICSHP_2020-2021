@@ -150,6 +150,7 @@
             // 
             this.Movement.Enabled = true;
             this.Movement.Interval = 10;
+            this.Movement.Tick += new System.EventHandler(this.MovementHandler);
             // 
             // pictureBox1
             // 
@@ -287,6 +288,7 @@
             // 
             this.Animation.Enabled = true;
             this.Animation.Interval = 300;
+            this.Animation.Tick += new System.EventHandler(this.AnimationHandler);
             // 
             // en_1
             // 

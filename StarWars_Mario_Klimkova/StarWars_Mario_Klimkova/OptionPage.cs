@@ -45,12 +45,8 @@ namespace StarWars_Mario_Klimkova
         /// <param name="e"></param>
         private void information_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("------INFORMATION ABOUT THIS GAME------\n" +
-                    "Star Wars Mario is an platform jumping game." +
-                    "Use left and right arrow for moving and space for jumping.\n" +
-                    "You have to collect all the coins and the saber and then get to the door, before you ran out of lives.\n" +
-                    "P is for pause and Enter for resume.\n" +
-                    "You can also use N to show information box during the game.\n");
+            InformationBox box = new InformationBox();
+            box.Show();
         }
 
         /// <summary>
@@ -69,6 +65,20 @@ namespace StarWars_Mario_Klimkova
                 System.IO.FileInfo File = new System.IO.FileInfo(FD.FileName);
                 skin = Image.FromFile(FD.FileName);
             }
+        }
+
+
+        /// <summary>
+        /// metoda uschova okno options
+        /// </summary>
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void OptionPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

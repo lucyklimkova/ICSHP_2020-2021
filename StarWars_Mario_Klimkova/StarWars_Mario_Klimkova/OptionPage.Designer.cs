@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionPage));
             this.optionMenu = new System.Windows.Forms.Panel();
+            this.close = new System.Windows.Forms.Button();
             this.information = new System.Windows.Forms.Button();
             this.changeSkin = new System.Windows.Forms.Button();
             this.changeBacground = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             // 
             this.optionMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("optionMenu.BackgroundImage")));
             this.optionMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.optionMenu.Controls.Add(this.close);
             this.optionMenu.Controls.Add(this.information);
             this.optionMenu.Controls.Add(this.changeSkin);
             this.optionMenu.Controls.Add(this.changeBacground);
@@ -47,6 +49,16 @@
             this.optionMenu.Name = "optionMenu";
             this.optionMenu.Size = new System.Drawing.Size(314, 326);
             this.optionMenu.TabIndex = 0;
+            // 
+            // close
+            // 
+            this.close.Location = new System.Drawing.Point(70, 248);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(166, 33);
+            this.close.TabIndex = 0;
+            this.close.Text = "Close";
+            this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // information
             // 
@@ -78,16 +90,17 @@
             this.changeBacground.UseVisualStyleBackColor = true;
             this.changeBacground.Click += new System.EventHandler(this.changeBacground_Click);
             // 
-            // Option_Page
+            // OptionPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(382, 403);
             this.Controls.Add(this.optionMenu);
-            this.Name = "Option_Page";
+            this.Name = "OptionPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Options";
+            this.Load += new System.EventHandler(this.OptionPage_Load);
             this.optionMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -99,5 +112,6 @@
         private System.Windows.Forms.Button information;
         private System.Windows.Forms.Button changeSkin;
         private System.Windows.Forms.Button changeBacground;
+        private System.Windows.Forms.Button close;
     }
 }

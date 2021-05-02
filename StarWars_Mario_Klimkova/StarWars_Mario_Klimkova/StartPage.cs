@@ -87,6 +87,7 @@ namespace StarWars_Mario_Klimkova
         /// <param name="e"></param>
         private void exitBttn_Click(object sender, EventArgs e)
         {
+            this.Close();
             Application.Exit();
         }
 
