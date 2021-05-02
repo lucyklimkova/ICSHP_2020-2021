@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StarWars_Mario_Klimkova
@@ -81,11 +75,11 @@ namespace StarWars_Mario_Klimkova
         {
             foreach (Control x in this.Controls)
             {
-                if (x is PictureBox && (string) x.Tag == "enemy")
+                if (x is PictureBox && (string)x.Tag == "enemy")
                 {
                     foreach (Control y in this.Controls)
                     {
-                        if (y is PictureBox && (string) y.Tag == "coin")
+                        if (y is PictureBox && (string)y.Tag == "coin")
                         {
                             if (player.Bounds.IntersectsWith(y.Bounds))
                             {
@@ -103,7 +97,7 @@ namespace StarWars_Mario_Klimkova
                                 life += 1;
                                 LifeStatus();
                             }
-                            
+
                             if (x.Bounds.IntersectsWith(y.Bounds))
                             {
                                 x.BackColor = Color.Transparent;
@@ -142,7 +136,7 @@ namespace StarWars_Mario_Klimkova
                 speed -= 1;
             }
             if (enemy1.Left < 200)
-            {  
+            {
                 speed = 1;
             }
             enemy1.Left += speed;
@@ -189,7 +183,7 @@ namespace StarWars_Mario_Klimkova
 
             foreach (Control x in this.Controls)
             {
-                if (x is PictureBox && (string) x.Tag == "platform")
+                if (x is PictureBox && (string)x.Tag == "platform")
                 {
                     if (player.Bounds.IntersectsWith(x.Bounds) && !jump)
                     {
@@ -238,7 +232,7 @@ namespace StarWars_Mario_Klimkova
         /// <summary>
         /// metoda slouzici pro ulozeni stavu hry do textoveho souboru
         /// vola dalši metodu, ktera analyzuje data pro ulozeni do stringu
-       /// </summary>
+        /// </summary>
         private void SaveGamePressedS()
         {
             if (paused == true)
@@ -477,6 +471,11 @@ namespace StarWars_Mario_Klimkova
             }
         }
 
+        private void SecondLevel_Load(object sender, EventArgs e)
+        {
+
+        }
+
         /// <summary>
         /// metoda pro ukonceni aplikace
         /// </summary>
@@ -492,7 +491,7 @@ namespace StarWars_Mario_Klimkova
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void restartLbl_Click(object sender, EventArgs e)
+        private void RestartLbl_Click(object sender, EventArgs e)
         {
             MainGame newWindow = new MainGame();
             newWindow.Show();
@@ -504,7 +503,7 @@ namespace StarWars_Mario_Klimkova
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void backToMenuLbl_Click(object sender, EventArgs e)
+        private void BackToMenuLbl_Click(object sender, EventArgs e)
         {
             StartPage newWindow = new StartPage();
             newWindow.Show();

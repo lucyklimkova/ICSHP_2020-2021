@@ -544,7 +544,7 @@
             this.backToMenuLbl.Size = new System.Drawing.Size(169, 28);
             this.backToMenuLbl.TabIndex = 3;
             this.backToMenuLbl.Text = "Back to Menu";
-            this.backToMenuLbl.Click += new System.EventHandler(this.backToMenuLbl_Click);
+            this.backToMenuLbl.Click += new System.EventHandler(this.BackToMenuLbl_Click);
             // 
             // restartLbl
             // 

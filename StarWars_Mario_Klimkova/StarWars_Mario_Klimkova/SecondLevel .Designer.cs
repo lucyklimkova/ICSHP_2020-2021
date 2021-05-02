@@ -546,7 +546,7 @@
             this.backToMenuLbl.Size = new System.Drawing.Size(169, 28);
             this.backToMenuLbl.TabIndex = 3;
             this.backToMenuLbl.Text = "Back to Menu";
-            this.backToMenuLbl.Click += new System.EventHandler(this.backToMenuLbl_Click);
+            this.backToMenuLbl.Click += new System.EventHandler(this.BackToMenuLbl_Click);
             // 
             // restartLbl
             // 
@@ -559,7 +559,7 @@
             this.restartLbl.Size = new System.Drawing.Size(94, 28);
             this.restartLbl.TabIndex = 3;
             this.restartLbl.Text = "Restart";
-            this.restartLbl.Click += new System.EventHandler(this.restartLbl_Click);
+            this.restartLbl.Click += new System.EventHandler(this.RestartLbl_Click);
             // 
             // pictureBox25
             // 
@@ -860,6 +860,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Star Wars Mario";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SecondLevel_FormClosed);
+            this.Load += new System.EventHandler(this.SecondLevel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SecondLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SecondLevel_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();

@@ -58,7 +58,7 @@
             this.close.TabIndex = 0;
             this.close.Text = "Close";
             this.close.UseVisualStyleBackColor = true;
-            this.close.Click += new System.EventHandler(this.close_Click);
+            this.close.Click += new System.EventHandler(this.Close_Click);
             // 
             // information
             // 
@@ -68,7 +68,7 @@
             this.information.TabIndex = 0;
             this.information.Text = "Information";
             this.information.UseVisualStyleBackColor = true;
-            this.information.Click += new System.EventHandler(this.information_Click);
+            this.information.Click += new System.EventHandler(this.Information_Click);
             // 
             // changeSkin
             // 
@@ -78,7 +78,7 @@
             this.changeSkin.TabIndex = 0;
             this.changeSkin.Text = "Change player skin";
             this.changeSkin.UseVisualStyleBackColor = true;
-            this.changeSkin.Click += new System.EventHandler(this.changeSkin_Click);
+            this.changeSkin.Click += new System.EventHandler(this.ChangeSkin_Click);
             // 
             // changeBacground
             // 
@@ -88,7 +88,7 @@
             this.changeBacground.TabIndex = 0;
             this.changeBacground.Text = "Change Background";
             this.changeBacground.UseVisualStyleBackColor = true;
-            this.changeBacground.Click += new System.EventHandler(this.changeBacground_Click);
+            this.changeBacground.Click += new System.EventHandler(this.ChangeBacground_Click);
             // 
             // OptionPage
             // 

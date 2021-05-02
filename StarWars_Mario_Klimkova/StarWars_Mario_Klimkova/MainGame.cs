@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StarWars_Mario_Klimkova
@@ -82,11 +76,11 @@ namespace StarWars_Mario_Klimkova
         {
             foreach (Control pBEnemy in this.Controls)
             {
-                if (pBEnemy is PictureBox && (string) pBEnemy.Tag == "enemy")
+                if (pBEnemy is PictureBox && (string)pBEnemy.Tag == "enemy")
                 {
                     foreach (Control pBCoin in this.Controls)
                     {
-                        if (pBCoin is PictureBox && (string) pBCoin.Tag == "coin")
+                        if (pBCoin is PictureBox && (string)pBCoin.Tag == "coin")
                         {
                             if (player.Bounds.IntersectsWith(pBCoin.Bounds))
                             {
@@ -104,7 +98,7 @@ namespace StarWars_Mario_Klimkova
                                 life += 1;
                                 LifeStatus();
                             }
-                            
+
                             if (pBEnemy.Bounds.IntersectsWith(pBCoin.Bounds))
                             {
                                 pBEnemy.BackColor = Color.Transparent;
@@ -145,7 +139,7 @@ namespace StarWars_Mario_Klimkova
                 speed -= 1;
             }
             if (enemy1.Left < 200)
-            {  
+            {
                 speed = 1;
             }
             enemy1.Left += speed;
@@ -191,7 +185,7 @@ namespace StarWars_Mario_Klimkova
 
             foreach (Control x in this.Controls)
             {
-                if (x is PictureBox && (string) x.Tag == "platform")
+                if (x is PictureBox && (string)x.Tag == "platform")
                 {
                     if (player.Bounds.IntersectsWith(x.Bounds) && !jump)
                     {
@@ -304,62 +298,64 @@ namespace StarWars_Mario_Klimkova
         /// </summary>
         private void LoadDataFromAFile(string s)
         {
-            try {
-            string[] coins;
-            string[] properties = s.Split(new[] { ';' });
-            player.Location = new Point(Int32.Parse(properties[0]), Int32.Parse(properties[1]));
-            life = Int32.Parse(properties[2]);
-            score = Int32.Parse(properties[3]);
-            scoreLabel.Text = "Score: " + score;
-            hasTheSaber = Boolean.Parse(properties[4]);
-            if (hasTheSaber == false)
+            try
             {
-                saber.Location = new Point(Int32.Parse(properties[5]), Int32.Parse(properties[6]));
-                en_1.Location = new Point(Int32.Parse(properties[7]), Int32.Parse(properties[8]));
-                en_2.Location = new Point(Int32.Parse(properties[9]), Int32.Parse(properties[10]));
-                coins = properties[11].Split(new[] { '+' });
-            } else
-            {
-                saber.Visible = false;
-                en_1.Location = new Point(Int32.Parse(properties[5]), Int32.Parse(properties[6]));
-                en_2.Location = new Point(Int32.Parse(properties[7]), Int32.Parse(properties[8]));
-                coins = properties[9].Split(new[] { '+' });
-            }
-
-            LifeStatus();
-            EnemyMovement(en_1, en_2);
-            foreach (Control pB in Controls)
-            {
-                if (pB is PictureBox && (string) pB.Tag == "coin")
+                string[] coins;
+                string[] properties = s.Split(new[] { ';' });
+                player.Location = new Point(Int32.Parse(properties[0]), Int32.Parse(properties[1]));
+                life = Int32.Parse(properties[2]);
+                score = Int32.Parse(properties[3]);
+                scoreLabel.Text = "Score: " + score;
+                hasTheSaber = Boolean.Parse(properties[4]);
+                if (hasTheSaber == false)
                 {
-                    pB.Show();
-                    pB.Visible = false;
+                    saber.Location = new Point(Int32.Parse(properties[5]), Int32.Parse(properties[6]));
+                    en_1.Location = new Point(Int32.Parse(properties[7]), Int32.Parse(properties[8]));
+                    en_2.Location = new Point(Int32.Parse(properties[9]), Int32.Parse(properties[10]));
+                    coins = properties[11].Split(new[] { '+' });
                 }
-            }
+                else
+                {
+                    saber.Visible = false;
+                    en_1.Location = new Point(Int32.Parse(properties[5]), Int32.Parse(properties[6]));
+                    en_2.Location = new Point(Int32.Parse(properties[7]), Int32.Parse(properties[8]));
+                    coins = properties[9].Split(new[] { '+' });
+                }
 
-            for (int i = 0; i < coins.Length - 1; i++)
-            {
-                string[] location = coins[i].Split(new[] { ',' });
-                Point p = new Point(Int32.Parse(location[0]), Int32.Parse(location[1]));
-
+                LifeStatus();
+                EnemyMovement(en_1, en_2);
                 foreach (Control pB in Controls)
                 {
-                    if (pB is PictureBox && (string) pB.Tag == "coin")
+                    if (pB is PictureBox && (string)pB.Tag == "coin")
                     {
-                        if (pB.Location == p)
+                        pB.Show();
+                        pB.Visible = false;
+                    }
+                }
+
+                for (int i = 0; i < coins.Length - 1; i++)
+                {
+                    string[] location = coins[i].Split(new[] { ',' });
+                    Point p = new Point(Int32.Parse(location[0]), Int32.Parse(location[1]));
+
+                    foreach (Control pB in Controls)
+                    {
+                        if (pB is PictureBox && (string)pB.Tag == "coin")
                         {
-                            pB.Visible = true;
+                            if (pB.Location == p)
+                            {
+                                pB.Visible = true;
+                            }
                         }
                     }
                 }
-            }
 
-            foreach (Control pB in Controls)
-            {
-                if (pB is PictureBox && (string) pB.Tag == "coin" && pB.Visible == false)
+                foreach (Control pB in Controls)
                 {
-                    pB.Dispose();
-                }
+                    if (pB is PictureBox && (string)pB.Tag == "coin" && pB.Visible == false)
+                    {
+                        pB.Dispose();
+                    }
                 }
             }
             catch (Exception e)
@@ -392,7 +388,7 @@ namespace StarWars_Mario_Klimkova
 
             foreach (Control pB in this.Controls)
             {
-                if (pB is PictureBox && (string) pB.Tag == "coin")
+                if (pB is PictureBox && (string)pB.Tag == "coin")
                 {
                     saveString += "\n" + pB.Location.X + "," + pB.Location.Y + "+";
                 }
@@ -500,12 +496,13 @@ namespace StarWars_Mario_Klimkova
         /// <param name="e"></param>
         private void restartLbl_Click(object sender, EventArgs e)
         {
-            if(option == 0)
+            if (option == 0)
             {
                 MainGame newWindow = new MainGame();
                 newWindow.Show();
                 this.Hide();
-            } else if (option == 1)
+            }
+            else if (option == 1)
             {
                 SecondLevel newWindow = new SecondLevel();
                 newWindow.Show();
@@ -519,7 +516,7 @@ namespace StarWars_Mario_Klimkova
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void backToMenuLbl_Click(object sender, EventArgs e)
+        private void BackToMenuLbl_Click(object sender, EventArgs e)
         {
             StartPage newWindow = new StartPage();
             newWindow.Show();

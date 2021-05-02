@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StarWars_Mario_Klimkova
@@ -96,7 +91,7 @@ namespace StarWars_Mario_Klimkova
         }
         #endregion
 
-        private void textBoxDescription_TextChanged(object sender, EventArgs e)
+        private void TextBoxDescription_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -105,7 +100,7 @@ namespace StarWars_Mario_Klimkova
         /// <summary>
         /// metoda uschova okno s informacemi
         /// </summary>
-        private void okButton_Click(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
             this.Hide();
         }

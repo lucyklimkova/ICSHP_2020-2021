@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StarWars_Mario_Klimkova
@@ -25,7 +19,7 @@ namespace StarWars_Mario_Klimkova
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void changeBacground_Click(object sender, EventArgs e)
+        private void ChangeBacground_Click(object sender, EventArgs e)
         {
             var FD = new System.Windows.Forms.OpenFileDialog();
             FD.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
@@ -43,7 +37,7 @@ namespace StarWars_Mario_Klimkova
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void information_Click(object sender, EventArgs e)
+        private void Information_Click(object sender, EventArgs e)
         {
             InformationBox box = new InformationBox();
             box.Show();
@@ -54,7 +48,7 @@ namespace StarWars_Mario_Klimkova
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void changeSkin_Click(object sender, EventArgs e)
+        private void ChangeSkin_Click(object sender, EventArgs e)
         {
             var FD = new System.Windows.Forms.OpenFileDialog();
             FD.Filter = "png files|*.png";
@@ -71,7 +65,7 @@ namespace StarWars_Mario_Klimkova
         /// <summary>
         /// metoda uschova okno options
         /// </summary>
-        private void close_Click(object sender, EventArgs e)
+        private void Close_Click(object sender, EventArgs e)
         {
             this.Hide();
         }

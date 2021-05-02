@@ -61,9 +61,9 @@
             this.exitBttn.Size = new System.Drawing.Size(137, 50);
             this.exitBttn.TabIndex = 0;
             this.exitBttn.TabStop = false;
-            this.exitBttn.Click += new System.EventHandler(this.exitBttn_Click);
-            this.exitBttn.MouseLeave += new System.EventHandler(this.exitBttn_MouseLeave);
-            this.exitBttn.MouseHover += new System.EventHandler(this.exitBttn_MouseHover);
+            this.exitBttn.Click += new System.EventHandler(this.ExitBttn_Click);
+            this.exitBttn.MouseLeave += new System.EventHandler(this.ExitBttn_MouseLeave);
+            this.exitBttn.MouseHover += new System.EventHandler(this.ExitBttn_MouseHover);
             // 
             // optionBttn
             // 
@@ -73,9 +73,9 @@
             this.optionBttn.Size = new System.Drawing.Size(137, 50);
             this.optionBttn.TabIndex = 0;
             this.optionBttn.TabStop = false;
-            this.optionBttn.Click += new System.EventHandler(this.optionBttn_Click);
-            this.optionBttn.MouseLeave += new System.EventHandler(this.optionBttn_MouseLeave);
-            this.optionBttn.MouseHover += new System.EventHandler(this.optionBttn_MouseHover);
+            this.optionBttn.Click += new System.EventHandler(this.OptionBttn_Click);
+            this.optionBttn.MouseLeave += new System.EventHandler(this.OptionBttn_MouseLeave);
+            this.optionBttn.MouseHover += new System.EventHandler(this.OptionBttn_MouseHover);
             // 
             // startBttn
             // 
@@ -85,9 +85,9 @@
             this.startBttn.Size = new System.Drawing.Size(137, 50);
             this.startBttn.TabIndex = 0;
             this.startBttn.TabStop = false;
-            this.startBttn.Click += new System.EventHandler(this.startBttn_Click);
-            this.startBttn.MouseLeave += new System.EventHandler(this.startBttn_MouseLeave);
-            this.startBttn.MouseHover += new System.EventHandler(this.startBttn_MouseHover);
+            this.startBttn.Click += new System.EventHandler(this.StartBttn_Click);
+            this.startBttn.MouseLeave += new System.EventHandler(this.StartBttn_MouseLeave);
+            this.startBttn.MouseHover += new System.EventHandler(this.StartBttn_MouseHover);
             // 
             // pictureBox1
             // 
