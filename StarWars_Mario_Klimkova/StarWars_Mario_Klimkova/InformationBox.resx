@@ -177,11 +177,12 @@
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
     <value>------INFORMATION ABOUT THIS GAME------
-Star Wars Mario is an platform jumping game.
+Star Wars Mario is an platform jumping game. There are 3 levels and you can restart each of them.
 Use left and right arrow for moving and space for jumping.
-You have to collect all the coins and the saber and then get to the door, before you ran out of lives.
+You have to collect atleast 10 coins of maximum of 20 and the saber and then get to the door, before you ran out of lives.
 P is for pause and Enter for resume.
 You can also use N to show information box during the game.
+You can also change player skin, background of the game and show an information box.
 </value>
   </data>
 </root>

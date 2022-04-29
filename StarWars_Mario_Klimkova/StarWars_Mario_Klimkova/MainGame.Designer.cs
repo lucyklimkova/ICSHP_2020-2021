@@ -64,6 +64,7 @@
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.overLabel = new System.Windows.Forms.Label();
             this.levelMenu = new System.Windows.Forms.GroupBox();
+            this.scoreFinalLbl = new System.Windows.Forms.Label();
             this.backToMenuLbl = new System.Windows.Forms.Label();
             this.restartLbl = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
@@ -85,6 +86,7 @@
             this.life2 = new System.Windows.Forms.PictureBox();
             this.life3 = new System.Windows.Forms.PictureBox();
             this.pausedGame = new System.Windows.Forms.Label();
+            this.saberLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -344,11 +346,11 @@
             this.scoreLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoreLabel.Font = new System.Drawing.Font("Imprint MT Shadow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.scoreLabel.Location = new System.Drawing.Point(273, 9);
+            this.scoreLabel.Location = new System.Drawing.Point(224, 9);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(101, 28);
+            this.scoreLabel.Size = new System.Drawing.Size(146, 28);
             this.scoreLabel.TabIndex = 3;
-            this.scoreLabel.Text = "Score: 0";
+            this.scoreLabel.Text = "Score: 0 /10";
             // 
             // pictureBox12
             // 
@@ -521,6 +523,7 @@
             // levelMenu
             // 
             this.levelMenu.BackColor = System.Drawing.Color.DarkRed;
+            this.levelMenu.Controls.Add(this.scoreFinalLbl);
             this.levelMenu.Controls.Add(this.overLabel);
             this.levelMenu.Controls.Add(this.backToMenuLbl);
             this.levelMenu.Controls.Add(this.restartLbl);
@@ -533,13 +536,22 @@
             this.levelMenu.TabStop = false;
             this.levelMenu.Text = "Menu";
             // 
+            // scoreFinalLbl
+            // 
+            this.scoreFinalLbl.AutoSize = true;
+            this.scoreFinalLbl.Location = new System.Drawing.Point(434, 182);
+            this.scoreFinalLbl.Name = "scoreFinalLbl";
+            this.scoreFinalLbl.Size = new System.Drawing.Size(78, 24);
+            this.scoreFinalLbl.TabIndex = 6;
+            this.scoreFinalLbl.Text = "Score: 0";
+            // 
             // backToMenuLbl
             // 
             this.backToMenuLbl.AutoSize = true;
             this.backToMenuLbl.BackColor = System.Drawing.Color.Transparent;
             this.backToMenuLbl.Font = new System.Drawing.Font("Imprint MT Shadow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backToMenuLbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.backToMenuLbl.Location = new System.Drawing.Point(208, 139);
+            this.backToMenuLbl.Location = new System.Drawing.Point(210, 134);
             this.backToMenuLbl.Name = "backToMenuLbl";
             this.backToMenuLbl.Size = new System.Drawing.Size(169, 28);
             this.backToMenuLbl.TabIndex = 3;
@@ -557,7 +569,7 @@
             this.restartLbl.Size = new System.Drawing.Size(94, 28);
             this.restartLbl.TabIndex = 3;
             this.restartLbl.Text = "Restart";
-            this.restartLbl.Click += new System.EventHandler(this.restartLbl_Click);
+            this.restartLbl.Click += new System.EventHandler(this.RestartLbl_Click);
             // 
             // pictureBox25
             // 
@@ -741,7 +753,7 @@
             // 
             this.life1.BackColor = System.Drawing.Color.Transparent;
             this.life1.Image = ((System.Drawing.Image)(resources.GetObject("life1.Image")));
-            this.life1.Location = new System.Drawing.Point(394, 9);
+            this.life1.Location = new System.Drawing.Point(547, 5);
             this.life1.Name = "life1";
             this.life1.Size = new System.Drawing.Size(32, 32);
             this.life1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -752,7 +764,7 @@
             // 
             this.life2.BackColor = System.Drawing.Color.Transparent;
             this.life2.Image = ((System.Drawing.Image)(resources.GetObject("life2.Image")));
-            this.life2.Location = new System.Drawing.Point(432, 9);
+            this.life2.Location = new System.Drawing.Point(585, 5);
             this.life2.Name = "life2";
             this.life2.Size = new System.Drawing.Size(32, 32);
             this.life2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -763,7 +775,7 @@
             // 
             this.life3.BackColor = System.Drawing.Color.Transparent;
             this.life3.Image = ((System.Drawing.Image)(resources.GetObject("life3.Image")));
-            this.life3.Location = new System.Drawing.Point(470, 9);
+            this.life3.Location = new System.Drawing.Point(623, 5);
             this.life3.Name = "life3";
             this.life3.Size = new System.Drawing.Size(32, 32);
             this.life3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -781,6 +793,18 @@
             this.pausedGame.Size = new System.Drawing.Size(1015, 71);
             this.pausedGame.TabIndex = 10;
             this.pausedGame.Text = "Game is paused, press Enter to resume";
+            // 
+            // saberLbl
+            // 
+            this.saberLbl.AutoSize = true;
+            this.saberLbl.BackColor = System.Drawing.Color.Transparent;
+            this.saberLbl.Font = new System.Drawing.Font("Imprint MT Shadow", 13.8F, System.Drawing.FontStyle.Bold);
+            this.saberLbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.saberLbl.Location = new System.Drawing.Point(398, 9);
+            this.saberLbl.Name = "saberLbl";
+            this.saberLbl.Size = new System.Drawing.Size(130, 28);
+            this.saberLbl.TabIndex = 11;
+            this.saberLbl.Text = "Saber: NO";
             // 
             // MainGame
             // 
@@ -840,12 +864,12 @@
             this.Controls.Add(this.door);
             this.Controls.Add(this.en_1);
             this.Controls.Add(this.en_2);
+            this.Controls.Add(this.saberLbl);
             this.DoubleBuffered = true;
             this.Name = "MainGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Star Wars Mario";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_Game_FormClosed);
-            this.Load += new System.EventHandler(this.MainGame_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_Game_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Main_Game_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
@@ -959,6 +983,8 @@
         private System.Windows.Forms.PictureBox life2;
         private System.Windows.Forms.PictureBox life3;
         private System.Windows.Forms.Label pausedGame;
+        private System.Windows.Forms.Label scoreFinalLbl;
+        private System.Windows.Forms.Label saberLbl;
     }
 }
 

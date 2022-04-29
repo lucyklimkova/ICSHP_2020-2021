@@ -105,9 +105,5 @@ namespace StarWars_Mario_Klimkova
             this.Hide();
         }
 
-        private void InformationBox_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

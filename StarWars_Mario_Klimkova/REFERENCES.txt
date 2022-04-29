@@ -1,0 +1,27 @@
+--OBRÁZKY--
+grafika /Resources/* - vlastní tvorba (menu.png, option_menu.png podle předlohy)
+další grafika převzata z internetu, pro využití pouze pro tuto semestrální práci:
+enemy.png, han.png, leia.png, player.png - license pixelprospector - https://twitter.com/pixelprospector/status/735901102126796800
+sword.png - license Mobile Legends - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRglLwzLrGzdnfASKyH2qeVcP_s_iZMHL2NLg&usqp=CAU
+coin.gif - CC BY-NC 4.0 - https://www.pngegg.com/en/png-ertzr
+door-open.png - by Moo ICT - https://i0.wp.com/www.mooict.com/wp-content/uploads/2018/03/c-users-admin-desktop-platform-game-2-platform-ga-1.jpeg?resize=60%2C90&ssl=1
+door-closed.png - by Moo ICT - https://i0.wp.com/www.mooict.com/wp-content/uploads/2018/03/c-users-admin-desktop-platform-game-2-platform-ga-1.gif?resize=60%2C90&ssl=1
+logo_sw.png - CC BY-NC 4.0 - https://pngset.com/images/nightmare-bros-tumblr-super-mario-transparent-png-2127514.png
+	      CC BY-NC 4.0 - https://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG43.png
+platform.png - https://icon-library.com/png/678164.html (license https://icon-library.com/3872835.html> Walkway, Tile, Food Network Logo, Cartoon Network Logo, Network, Network Icon # 678164)
+bckg.jpg - personal use only - https://wallpaperaccess.com/full/38525.jpg
+bckg2.jpg - by Moo ICT - https://i0.wp.com/www.mooict.com/wp-content/uploads/2018/03/c-users-admin-desktop-platform-game-2-platform-ga.jpeg?resize=1024%2C246&ssl=1 
+bckg3.jpg - license Dashiana Visual Development Artist - https://cdna.artstation.com/p/assets/images/images/002/676/032/large/dashiana-portfolio-ab-star-wars-geonosis-1000.jpg?1464414286
+life.png, life_white.png - license ROHIT POGRAMMING ZONE - https://drive.google.com/file/d/1juZ44YTvl2Drl_i4KfSLiz5p2PjpcYAg/view
+start, option, exit.png (normal a hover) - license ROHIT POGRAMMING ZONE - https://rohitprogrammingzone.blogspot.com/
+
+--TUTORIALY--
+YouTube tutorial k základům skákací hry - https://www.youtube.com/watch?v=rQBHwdEEL9I&t=2416s
+					  https://www.youtube.com/watch?v=yw_sn9DonH4
+YouTube tutorial k zobrazování života hráče - https://www.youtube.com/watch?v=47DsGDzXlCk
+Část pro tvorbu start menu - https://www.youtube.com/watch?v=djAU9kb1YgI&t=118s
+Kód pro save/load hry -https://stackoverflow.com/questions/40965645/what-is-the-best-way-to-save-game-state  
+
+--POPIS--
+Některé obrázky byly zmenšeny, oříznuty či jinak upraveny, aby se ve hře daly použít.
+Všechny obrázky jsou použity pouze pro tuto školní semestrální práci a nebudou nijak dalé šířeny. 

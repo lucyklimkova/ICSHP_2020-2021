@@ -8,6 +8,7 @@ namespace StarWars_Mario_Klimkova
     {
         public static Image bckg;
         public static Image skin;
+        public static string picname;
 
         public OptionPage()
         {
@@ -21,13 +22,14 @@ namespace StarWars_Mario_Klimkova
         /// <param name="e"></param>
         private void ChangeBacground_Click(object sender, EventArgs e)
         {
-            var FD = new System.Windows.Forms.OpenFileDialog();
-            FD.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-            if (FD.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            var FD = new OpenFileDialog
             {
-                string fileToOpen = FD.FileName;
-
-                System.IO.FileInfo File = new System.IO.FileInfo(FD.FileName);
+                Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png"
+            };
+            if (FD.ShowDialog() == DialogResult.OK)
+            {
+                _ = FD.FileName;
+                _ = new System.IO.FileInfo(FD.FileName);
                 bckg = Image.FromFile(FD.FileName);
             }
         }
@@ -50,13 +52,14 @@ namespace StarWars_Mario_Klimkova
         /// <param name="e"></param>
         private void ChangeSkin_Click(object sender, EventArgs e)
         {
-            var FD = new System.Windows.Forms.OpenFileDialog();
-            FD.Filter = "png files|*.png";
-            if (FD.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            var FD = new OpenFileDialog
             {
-                string fileToOpen = FD.FileName;
-
-                System.IO.FileInfo File = new System.IO.FileInfo(FD.FileName);
+                Filter = "png files|*.png"
+            };
+            if (FD.ShowDialog() == DialogResult.OK)
+            {
+                picname = FD.FileName;
+                _ = new System.IO.FileInfo(FD.FileName);
                 skin = Image.FromFile(FD.FileName);
             }
         }
@@ -68,11 +71,6 @@ namespace StarWars_Mario_Klimkova
         private void Close_Click(object sender, EventArgs e)
         {
             this.Hide();
-        }
-
-        private void OptionPage_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

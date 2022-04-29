@@ -43,7 +43,8 @@
             // 
             // menu
             // 
-            this.menu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu.BackgroundImage")));
+            this.menu.BackColor = System.Drawing.Color.Black;
+            this.menu.BackgroundImage = global::StarWars_Mario_Klimkova.Properties.Resources.menu;
             this.menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menu.Controls.Add(this.exitBttn);
             this.menu.Controls.Add(this.optionBttn);
@@ -99,7 +100,7 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // Start_Page
+            // StartPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,7 +108,7 @@
             this.ClientSize = new System.Drawing.Size(382, 461);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Start_Page";
+            this.Name = "StartPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Screen";
             this.Load += new System.EventHandler(this.Start_Page_Load);

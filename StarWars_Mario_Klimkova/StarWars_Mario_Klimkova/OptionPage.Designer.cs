@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionPage));
             this.optionMenu = new System.Windows.Forms.Panel();
             this.close = new System.Windows.Forms.Button();
             this.information = new System.Windows.Forms.Button();
@@ -39,7 +38,8 @@
             // 
             // optionMenu
             // 
-            this.optionMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("optionMenu.BackgroundImage")));
+            this.optionMenu.BackColor = System.Drawing.Color.Transparent;
+            this.optionMenu.BackgroundImage = global::StarWars_Mario_Klimkova.Properties.Resources.option_menu;
             this.optionMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.optionMenu.Controls.Add(this.close);
             this.optionMenu.Controls.Add(this.information);
@@ -100,7 +100,6 @@
             this.Name = "OptionPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Options";
-            this.Load += new System.EventHandler(this.OptionPage_Load);
             this.optionMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

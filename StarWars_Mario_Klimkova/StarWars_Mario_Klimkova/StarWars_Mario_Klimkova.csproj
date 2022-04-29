@@ -56,16 +56,22 @@
     <Compile Include="InformationBox.Designer.cs">
       <DependentUpon>InformationBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThirdLevel.Designer.cs">
+      <DependentUpon>ThirdLevel.cs</DependentUpon>
+    </Compile>
     <Compile Include="SecondLevel .cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SecondLevel .Designer.cs">
       <DependentUpon>SecondLevel .cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="OptionPage.cs">
       <SubType>Form</SubType>
@@ -89,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="InformationBox.resx">
       <DependentUpon>InformationBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThirdLevel.resx">
+      <DependentUpon>ThirdLevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SecondLevel .resx">
       <DependentUpon>SecondLevel .cs</DependentUpon>
@@ -163,9 +172,6 @@
     <None Include="Resources\option_hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\option_menu.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\option_normal.png" />
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\life_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\option_menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

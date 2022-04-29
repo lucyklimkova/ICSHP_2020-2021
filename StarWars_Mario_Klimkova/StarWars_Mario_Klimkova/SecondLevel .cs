@@ -10,10 +10,12 @@ namespace StarWars_Mario_Klimkova
 
         private bool right, left, jump, paused;
         private bool hasTheSaber = false;
+        private string saberText = "NO";
         private int speed;
         private int score = 0;
         private int life = 0;
-        private int force = 10;
+        private int force = 5;
+        private int option;
 
 
         public SecondLevel()
@@ -31,6 +33,7 @@ namespace StarWars_Mario_Klimkova
             if (OptionPage.skin != null)
             {
                 player.Image = OptionPage.skin;
+                player.Width = 30;
             }
 
         }
@@ -50,13 +53,18 @@ namespace StarWars_Mario_Klimkova
             if (life == 1)
             {
                 life1.Image = Properties.Resources.life_white;
+                life2.Image = Properties.Resources.life;
+                life3.Image = Properties.Resources.life;
             }
             if (life == 2)
             {
+                life1.Image = Properties.Resources.life_white;
                 life2.Image = Properties.Resources.life_white;
+                life3.Image = Properties.Resources.life;
             }
             if (life == 3)
             {
+                option = 0;
                 life3.Image = Properties.Resources.life_white;
                 levelMenu.Visible = true;
                 levelMenu.BringToFront();
@@ -73,35 +81,38 @@ namespace StarWars_Mario_Klimkova
         /// </summary>
         private void GameResult()
         {
-            foreach (Control x in this.Controls)
+            foreach (Control pBEnemy in this.Controls)
             {
-                if (x is PictureBox && (string)x.Tag == "enemy")
+                if (pBEnemy is PictureBox && (string)pBEnemy.Tag == "enemy")
                 {
-                    foreach (Control y in this.Controls)
+                    foreach (Control pBCoin in this.Controls)
                     {
-                        if (y is PictureBox && (string)y.Tag == "coin")
+                        if (pBCoin is PictureBox && (string)pBCoin.Tag == "coin")
                         {
-                            if (player.Bounds.IntersectsWith(y.Bounds))
+                            if (player.Bounds.IntersectsWith(pBCoin.Bounds))
                             {
-                                y.Dispose();
-                                score++;
-                                scoreLabel.Text = "Score: " + score;
+                                if (pBCoin.Visible == true)
+                                {
+                                    pBCoin.Visible = false;
+                                    score++;
+                                    scoreLabel.Text = "Score: " + score + " /10";
+                                }
                             }
 
-                            if (player.Bounds.IntersectsWith(x.Bounds))
+                            if (player.Bounds.IntersectsWith(pBEnemy.Bounds))
                             {
                                 left = false;
                                 right = false;
                                 jump = false;
-                                player.Location = new Point(1098, 269);
+                                player.Location = new Point(800, 269);
                                 life += 1;
                                 LifeStatus();
                             }
 
-                            if (x.Bounds.IntersectsWith(y.Bounds))
+                            if (pBEnemy.Bounds.IntersectsWith(pBCoin.Bounds))
                             {
-                                x.BackColor = Color.Transparent;
-                                y.BackColor = Color.Transparent;
+                                pBEnemy.BackColor = Color.Transparent;
+                                pBCoin.BackColor = Color.Transparent;
                             }
                         }
                     }
@@ -112,13 +123,18 @@ namespace StarWars_Mario_Klimkova
             {
                 saber.Visible = false;
                 hasTheSaber = true;
+                saberText = "YES";
+                saberLbl.Text = "Saber: " + saberText;
             }
 
-            if (player.Bounds.IntersectsWith(door.Bounds) && hasTheSaber == true && score >= 20)
+            if (player.Bounds.IntersectsWith(door.Bounds) && hasTheSaber == true && score >= 10)
             {
                 door.Image = Properties.Resources.door_open;
+                option = 1;
                 overLabel.Text = "You Win!";
+                restartLbl.Text = "Level 3";
                 levelMenu.BackColor = Color.Green;
+                scoreFinalLbl.Text = "Score: " + score;
                 levelMenu.Visible = true;
                 levelMenu.BringToFront();
                 Animation.Stop();
@@ -174,7 +190,7 @@ namespace StarWars_Mario_Klimkova
             if (jump == true)
             {
                 player.Top -= 3;
-                force -= 1;
+                force = 3;
             }
             if (jump == false)
             {
@@ -297,15 +313,20 @@ namespace StarWars_Mario_Klimkova
         {
             try
             {
+                life1.Image = Properties.Resources.life;
+                life2.Image = Properties.Resources.life;
+                life3.Image = Properties.Resources.life;
                 string[] coins;
                 string[] properties = s.Split(new[] { ';' });
                 player.Location = new Point(Int32.Parse(properties[0]), Int32.Parse(properties[1]));
                 life = Int32.Parse(properties[2]);
+                LifeStatus();
                 score = Int32.Parse(properties[3]);
                 scoreLabel.Text = "Score: " + score;
                 hasTheSaber = Boolean.Parse(properties[4]);
                 if (hasTheSaber == false)
                 {
+                    saber.Visible = true;
                     saber.Location = new Point(Int32.Parse(properties[5]), Int32.Parse(properties[6]));
                     en_1.Location = new Point(Int32.Parse(properties[7]), Int32.Parse(properties[8]));
                     en_2.Location = new Point(Int32.Parse(properties[9]), Int32.Parse(properties[10]));
@@ -319,13 +340,11 @@ namespace StarWars_Mario_Klimkova
                     coins = properties[9].Split(new[] { '+' });
                 }
 
-                LifeStatus();
                 EnemyMovement(en_1, en_2);
                 foreach (Control pB in Controls)
                 {
                     if (pB is PictureBox && (string)pB.Tag == "coin")
                     {
-                        pB.Show();
                         pB.Visible = false;
                     }
                 }
@@ -339,19 +358,12 @@ namespace StarWars_Mario_Klimkova
                     {
                         if (pB is PictureBox && (string)pB.Tag == "coin")
                         {
-                            if (pB.Location == p)
+                            if (pB.Location.Equals(p))
                             {
                                 pB.Visible = true;
+                                break;
                             }
                         }
-                    }
-                }
-
-                foreach (Control pB in Controls)
-                {
-                    if (pB is PictureBox && (string)pB.Tag == "coin" && pB.Visible == false)
-                    {
-                        pB.Dispose();
                     }
                 }
             }
@@ -385,7 +397,7 @@ namespace StarWars_Mario_Klimkova
 
             foreach (Control pB in this.Controls)
             {
-                if (pB is PictureBox && (string)pB.Tag == "coin")
+                if (pB is PictureBox && (string)pB.Tag == "coin" && pB.Visible == true)
                 {
                     saveString += "\n" + pB.Location.X + "," + pB.Location.Y + "+";
                 }
@@ -426,7 +438,7 @@ namespace StarWars_Mario_Klimkova
                 case Keys.I:
                     MessageBox.Show("------INFORMATION------\n" +
                         "Use left and right arrow for moving and space for jumping.\n" +
-                        "You have to collect all the coins and the saber and then get to the door, before you ran out of lives.\n" +
+                        "You have to collect 10 coins and the saber and then get to the door, before you ran out of lives.\n" +
                         "P is for pause and Enter for resume.\n" +
                         "Save your game, when paused using S key.\n" +
                         "Load your saved game by using L key.\n" +
@@ -471,11 +483,6 @@ namespace StarWars_Mario_Klimkova
             }
         }
 
-        private void SecondLevel_Load(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// metoda pro ukonceni aplikace
         /// </summary>
@@ -493,9 +500,18 @@ namespace StarWars_Mario_Klimkova
         /// <param name="e"></param>
         private void RestartLbl_Click(object sender, EventArgs e)
         {
-            MainGame newWindow = new MainGame();
-            newWindow.Show();
-            this.Hide();
+                if (option == 0)
+                {
+                    SecondLevel newWindow = new SecondLevel();
+                    newWindow.Show();
+                    this.Hide();
+                }
+                else if (option == 1)
+                {
+                    ThirdLevel newWindow = new ThirdLevel();
+                    newWindow.Show();
+                    this.Hide();
+                }
         }
 
         /// <summary>

@@ -64,8 +64,10 @@
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.overLabel = new System.Windows.Forms.Label();
             this.levelMenu = new System.Windows.Forms.GroupBox();
+            this.scoreFinalLbl = new System.Windows.Forms.Label();
             this.backToMenuLbl = new System.Windows.Forms.Label();
             this.restartLbl = new System.Windows.Forms.Label();
+            this.pausedGame = new System.Windows.Forms.Label();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
@@ -84,8 +86,8 @@
             this.life1 = new System.Windows.Forms.PictureBox();
             this.life2 = new System.Windows.Forms.PictureBox();
             this.life3 = new System.Windows.Forms.PictureBox();
-            this.pausedGame = new System.Windows.Forms.Label();
             this.pictureBox29 = new System.Windows.Forms.PictureBox();
+            this.saberLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -220,7 +222,7 @@
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(3, 117);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(134, 26);
+            this.pictureBox6.Size = new System.Drawing.Size(124, 26);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 1;
             this.pictureBox6.TabStop = false;
@@ -242,9 +244,9 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(157, 187);
+            this.pictureBox8.Location = new System.Drawing.Point(170, 201);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(114, 25);
+            this.pictureBox8.Size = new System.Drawing.Size(87, 25);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 1;
             this.pictureBox8.TabStop = false;
@@ -346,17 +348,17 @@
             this.scoreLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoreLabel.Font = new System.Drawing.Font("Imprint MT Shadow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.scoreLabel.Location = new System.Drawing.Point(273, 9);
+            this.scoreLabel.Location = new System.Drawing.Point(224, 9);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(101, 28);
+            this.scoreLabel.Size = new System.Drawing.Size(146, 28);
             this.scoreLabel.TabIndex = 3;
-            this.scoreLabel.Text = "Score: 0";
+            this.scoreLabel.Text = "Score: 0 /10";
             // 
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(166, 149);
+            this.pictureBox12.Location = new System.Drawing.Point(178, 163);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(32, 32);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -380,7 +382,7 @@
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(204, 149);
+            this.pictureBox14.Location = new System.Drawing.Point(211, 163);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(32, 32);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -523,17 +525,27 @@
             // levelMenu
             // 
             this.levelMenu.BackColor = System.Drawing.Color.DarkRed;
+            this.levelMenu.Controls.Add(this.scoreFinalLbl);
             this.levelMenu.Controls.Add(this.overLabel);
             this.levelMenu.Controls.Add(this.backToMenuLbl);
             this.levelMenu.Controls.Add(this.restartLbl);
             this.levelMenu.Font = new System.Drawing.Font("Imprint MT Shadow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.levelMenu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.levelMenu.Location = new System.Drawing.Point(320, 62);
+            this.levelMenu.Location = new System.Drawing.Point(323, 60);
             this.levelMenu.Name = "levelMenu";
             this.levelMenu.Size = new System.Drawing.Size(561, 223);
             this.levelMenu.TabIndex = 6;
             this.levelMenu.TabStop = false;
             this.levelMenu.Text = "Menu";
+            // 
+            // scoreFinalLbl
+            // 
+            this.scoreFinalLbl.AutoSize = true;
+            this.scoreFinalLbl.Location = new System.Drawing.Point(434, 182);
+            this.scoreFinalLbl.Name = "scoreFinalLbl";
+            this.scoreFinalLbl.Size = new System.Drawing.Size(78, 24);
+            this.scoreFinalLbl.TabIndex = 7;
+            this.scoreFinalLbl.Text = "Score: 0";
             // 
             // backToMenuLbl
             // 
@@ -541,7 +553,7 @@
             this.backToMenuLbl.BackColor = System.Drawing.Color.Transparent;
             this.backToMenuLbl.Font = new System.Drawing.Font("Imprint MT Shadow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backToMenuLbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.backToMenuLbl.Location = new System.Drawing.Point(208, 139);
+            this.backToMenuLbl.Location = new System.Drawing.Point(210, 134);
             this.backToMenuLbl.Name = "backToMenuLbl";
             this.backToMenuLbl.Size = new System.Drawing.Size(169, 28);
             this.backToMenuLbl.TabIndex = 3;
@@ -560,6 +572,18 @@
             this.restartLbl.TabIndex = 3;
             this.restartLbl.Text = "Restart";
             this.restartLbl.Click += new System.EventHandler(this.RestartLbl_Click);
+            // 
+            // pausedGame
+            // 
+            this.pausedGame.AutoSize = true;
+            this.pausedGame.BackColor = System.Drawing.Color.Black;
+            this.pausedGame.Font = new System.Drawing.Font("Imprint MT Shadow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pausedGame.ForeColor = System.Drawing.Color.White;
+            this.pausedGame.Location = new System.Drawing.Point(68, -2);
+            this.pausedGame.Name = "pausedGame";
+            this.pausedGame.Size = new System.Drawing.Size(1015, 71);
+            this.pausedGame.TabIndex = 10;
+            this.pausedGame.Text = "Game is paused, press Enter to resume";
             // 
             // pictureBox25
             // 
@@ -613,9 +637,9 @@
             // 
             this.pictureBox30.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox30.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox30.Image")));
-            this.pictureBox30.Location = new System.Drawing.Point(1056, 99);
+            this.pictureBox30.Location = new System.Drawing.Point(1081, 99);
             this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.Size = new System.Drawing.Size(125, 22);
+            this.pictureBox30.Size = new System.Drawing.Size(100, 22);
             this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox30.TabIndex = 1;
             this.pictureBox30.TabStop = false;
@@ -720,9 +744,9 @@
             // 
             this.pictureBox38.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox38.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox38.Image")));
-            this.pictureBox38.Location = new System.Drawing.Point(1098, 208);
+            this.pictureBox38.Location = new System.Drawing.Point(1109, 208);
             this.pictureBox38.Name = "pictureBox38";
-            this.pictureBox38.Size = new System.Drawing.Size(84, 23);
+            this.pictureBox38.Size = new System.Drawing.Size(73, 23);
             this.pictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox38.TabIndex = 1;
             this.pictureBox38.TabStop = false;
@@ -743,7 +767,7 @@
             // 
             this.life1.BackColor = System.Drawing.Color.Transparent;
             this.life1.Image = ((System.Drawing.Image)(resources.GetObject("life1.Image")));
-            this.life1.Location = new System.Drawing.Point(394, 9);
+            this.life1.Location = new System.Drawing.Point(550, 5);
             this.life1.Name = "life1";
             this.life1.Size = new System.Drawing.Size(32, 32);
             this.life1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -754,7 +778,7 @@
             // 
             this.life2.BackColor = System.Drawing.Color.Transparent;
             this.life2.Image = ((System.Drawing.Image)(resources.GetObject("life2.Image")));
-            this.life2.Location = new System.Drawing.Point(432, 9);
+            this.life2.Location = new System.Drawing.Point(588, 5);
             this.life2.Name = "life2";
             this.life2.Size = new System.Drawing.Size(32, 32);
             this.life2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -765,36 +789,36 @@
             // 
             this.life3.BackColor = System.Drawing.Color.Transparent;
             this.life3.Image = ((System.Drawing.Image)(resources.GetObject("life3.Image")));
-            this.life3.Location = new System.Drawing.Point(470, 9);
+            this.life3.Location = new System.Drawing.Point(626, 5);
             this.life3.Name = "life3";
             this.life3.Size = new System.Drawing.Size(32, 32);
             this.life3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.life3.TabIndex = 9;
             this.life3.TabStop = false;
             // 
-            // pausedGame
-            // 
-            this.pausedGame.AutoSize = true;
-            this.pausedGame.BackColor = System.Drawing.Color.Black;
-            this.pausedGame.Font = new System.Drawing.Font("Imprint MT Shadow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pausedGame.ForeColor = System.Drawing.Color.White;
-            this.pausedGame.Location = new System.Drawing.Point(68, -2);
-            this.pausedGame.Name = "pausedGame";
-            this.pausedGame.Size = new System.Drawing.Size(1015, 71);
-            this.pausedGame.TabIndex = 10;
-            this.pausedGame.Text = "Game is paused, press Enter to resume";
-            // 
             // pictureBox29
             // 
             this.pictureBox29.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox29.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox29.Image")));
-            this.pictureBox29.Location = new System.Drawing.Point(950, 218);
+            this.pictureBox29.Location = new System.Drawing.Point(991, 187);
             this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(69, 22);
+            this.pictureBox29.Size = new System.Drawing.Size(48, 22);
             this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox29.TabIndex = 1;
             this.pictureBox29.TabStop = false;
             this.pictureBox29.Tag = "platform";
+            // 
+            // saberLbl
+            // 
+            this.saberLbl.AutoSize = true;
+            this.saberLbl.BackColor = System.Drawing.Color.Transparent;
+            this.saberLbl.Font = new System.Drawing.Font("Imprint MT Shadow", 13.8F, System.Drawing.FontStyle.Bold);
+            this.saberLbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.saberLbl.Location = new System.Drawing.Point(398, 9);
+            this.saberLbl.Name = "saberLbl";
+            this.saberLbl.Size = new System.Drawing.Size(130, 28);
+            this.saberLbl.TabIndex = 12;
+            this.saberLbl.Text = "Saber: NO";
             // 
             // SecondLevel
             // 
@@ -804,8 +828,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1182, 353);
-            this.Controls.Add(this.levelMenu);
             this.Controls.Add(this.pausedGame);
+            this.Controls.Add(this.levelMenu);
             this.Controls.Add(this.life3);
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox11);
@@ -855,12 +879,12 @@
             this.Controls.Add(this.door);
             this.Controls.Add(this.en_1);
             this.Controls.Add(this.en_2);
+            this.Controls.Add(this.saberLbl);
             this.DoubleBuffered = true;
             this.Name = "SecondLevel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Star Wars Mario";
+            this.Text = "Star Wars Mario - Level 2";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SecondLevel_FormClosed);
-            this.Load += new System.EventHandler(this.SecondLevel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SecondLevel_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SecondLevel_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
@@ -976,6 +1000,8 @@
         private System.Windows.Forms.PictureBox life3;
         private System.Windows.Forms.Label pausedGame;
         private System.Windows.Forms.PictureBox pictureBox29;
+        private System.Windows.Forms.Label scoreFinalLbl;
+        private System.Windows.Forms.Label saberLbl;
     }
 }
 
